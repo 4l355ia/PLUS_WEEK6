@@ -37,7 +37,7 @@ function formatDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
 
   let formattedDay = days[day];
@@ -51,3 +51,12 @@ let currentDateELement = document.querySelector("#current-date");
 let currentDate = new Date();
 
 currentDateELement.innerHTML = formatDate(currentDate);
+
+function handleSearchSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#search-form-input");
+  let cityElement = document.querySelector("#city");
+  cityElement.innerHTML = searchInput.value;
+}
+let searchFormElement = document.querySelector("search-form");
+searchFormElement.addEventListener("submit", handleSearchSubmit);
